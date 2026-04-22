@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-label="Award placeholder image">
+  <rect width="900" height="520" fill="#191919"/>
+  <g fill="none" stroke="#f06421" stroke-width="8" opacity="0.65">
+    <path d="M70 430L180 320L290 430L400 320L510 430L620 320L730 430L840 320"/>
+    <path d="M70 390L180 280L290 390L400 280L510 390L620 280L730 390L840 280"/>
+  </g>
+  <text x="450" y="230" text-anchor="middle" fill="#ffffff" font-size="44" font-family="Arial, sans-serif">AWARD 3</text>
+  <text x="450" y="300" text-anchor="middle" fill="#c8c8c8" font-size="24" font-family="Arial, sans-serif">Replace with your original award image</text>
+</svg>

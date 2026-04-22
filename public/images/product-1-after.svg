@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="After image placeholder">
+  <rect width="900" height="500" fill="#1b1b1b"/>
+  <rect x="80" y="160" width="740" height="180" rx="18" fill="#505050"/>
+  <rect x="140" y="190" width="280" height="120" rx="10" fill="#2c2c2c"/>
+  <rect x="480" y="190" width="280" height="120" rx="10" fill="#2c2c2c"/>
+  <path d="M0 0H900L780 110H120Z" fill="#f06421" opacity="0.55"/>
+  <text x="450" y="90" text-anchor="middle" fill="#ffffff" font-size="48" font-family="Arial, sans-serif">AFTER</text>
+</svg>

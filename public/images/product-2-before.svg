@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="Before image placeholder">
+  <rect width="900" height="500" fill="#303030"/>
+  <circle cx="230" cy="250" r="100" fill="#7a7a7a"/>
+  <circle cx="670" cy="250" r="100" fill="#7a7a7a"/>
+  <rect x="220" y="130" width="460" height="240" rx="24" fill="#c8c8c8"/>
+  <text x="450" y="90" text-anchor="middle" fill="#ffffff" font-size="48" font-family="Arial, sans-serif">BEFORE</text>
+</svg>
