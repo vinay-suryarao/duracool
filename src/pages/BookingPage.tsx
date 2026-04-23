@@ -14,6 +14,11 @@ function BookingPage() {
     message: '',
   })
 
+  const onPhoneInput = (event: FormEvent<HTMLInputElement>) => {
+    const digitsOnly = event.currentTarget.value.replace(/\D/g, '').slice(0, 10)
+    event.currentTarget.value = digitsOnly
+  }
+
   const onBookingSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const form = event.currentTarget
@@ -115,7 +120,19 @@ function BookingPage() {
 
         <label>
           Phone Number
-          <input name="phone" type="tel" required placeholder="Enter phone number" />
+          <input
+            name="phone"
+            type="text"
+            required
+            placeholder="Enter 10-digit phone number"
+            inputMode="numeric"
+            autoComplete="tel"
+            maxLength={10}
+            minLength={10}
+            pattern="[0-9]{10}"
+            title="Please enter exactly 10 digits"
+            onInput={onPhoneInput}
+          />
         </label>
 
         <label>
@@ -144,7 +161,23 @@ function BookingPage() {
 
         <label>
           Preferred Time
-          <input name="preferredTime" type="time" required />
+          <select name="preferredTime" required defaultValue="">
+            <option value="" disabled>
+              Select time slot
+            </option>
+            <option value="09:00 AM">09:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="01:00 PM">01:00 PM</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="03:00 PM">03:00 PM</option>
+            <option value="04:00 PM">04:00 PM</option>
+            <option value="05:00 PM">05:00 PM</option>
+            <option value="06:00 PM">06:00 PM</option>
+            <option value="07:00 PM">07:00 PM</option>
+            <option value="08:00 PM">08:00 PM</option>
+          </select>
         </label>
 
         <label className="full-width">
