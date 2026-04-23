@@ -7,7 +7,7 @@ const navItems = [
   { to: '/awards', label: 'Awards' },
   { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Contact Us' },
-  { to: '/booking', label: 'Booking' },
+  { to: '/booking', label: 'Book Now' },
 ]
 
 function Layout() {

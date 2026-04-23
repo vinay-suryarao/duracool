@@ -242,8 +242,7 @@ body {
   background: rgba(240, 100, 33, 0.14);
 }
 
-.site-nav a.active,
-.footer-links a.active {
+.site-nav a.active {
   border-color: var(--accent-soft);
   color: #fff;
   background: rgba(240, 100, 33, 0.2);
