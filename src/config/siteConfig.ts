@@ -24,12 +24,32 @@ export const siteConfig = {
   ownerBio:
     env.VITE_OWNER_BIO ||
     'Automotive care specialist focused on long-lasting cabin comfort and premium finishing.',
-  contactEmail: env.VITE_CONTACT_EMAIL || 'hello@duracoolfilms.com',
-  contactPhone: env.VITE_CONTACT_PHONE || '+91 90000 00000',
+  contactEmail: env.VITE_CONTACT_EMAIL || 'durapointmumbai@gmail.com',
+  contactPhone: env.VITE_CONTACT_PHONE || '9967801692',
   bookingScriptUrl: env.VITE_BOOKING_SCRIPT_URL || '',
-  instagramUrl: env.VITE_INSTAGRAM_URL || 'https://instagram.com',
-  whatsappUrl: env.VITE_WHATSAPP_URL || 'https://wa.me/919000000000',
+  instagramUrl:
+    env.VITE_INSTAGRAM_URL ||
+    'https://www.instagram.com/dura.cool?utm_source=qr&igsh=MXhhempxeHo0NG40ZA==',
+  whatsappUrl: env.VITE_WHATSAPP_URL || 'https://wa.me/919967801692',
   facebookUrl: env.VITE_FACEBOOK_URL || 'https://facebook.com',
+  contactPageEmail: env.VITE_CONTACT_PAGE_EMAIL || 'durapointmumbai@gmail.com',
+  contactPagePhone: env.VITE_CONTACT_PAGE_PHONE || '9967801692',
+  contactPageInstagramUrl:
+    env.VITE_CONTACT_PAGE_INSTAGRAM_URL ||
+    'https://www.instagram.com/dura.cool?utm_source=qr&igsh=MXhhempxeHo0NG40ZA==',
+  contactPageWhatsappUrl:
+    env.VITE_CONTACT_PAGE_WHATSAPP_URL || 'https://wa.me/919967801692',
+  contactPageMapUrl:
+    env.VITE_CONTACT_PAGE_MAP_URL ||
+    'https://www.google.com/maps?q=19.1083676,72.8886249&z=17&hl=en',
+  contactPageMapEmbedUrl:
+    env.VITE_CONTACT_PAGE_MAP_EMBED_URL ||
+    'https://www.google.com/maps?q=19.1083676,72.8886249&z=17&hl=en&output=embed',
+  contactPageAddressLine1:
+    env.VITE_CONTACT_PAGE_ADDRESS_LINE_1 ||
+    'K 218 ansha industries sakhivihar road sakhinaka',
+  contactPageAddressLine2:
+    env.VITE_CONTACT_PAGE_ADDRESS_LINE_2 || 'Near Shivsagar hotel',
   homeHeroImage: env.VITE_HOME_HERO_IMAGE || '/images/home-hero-driving.jpg',
   homeInfoImage: env.VITE_HOME_INFO_IMAGE || '/images/home-suncontrol-service.jpg',
   homeInfoTitle: env.VITE_HOME_INFO_TITLE || 'What Are Suncontrol Films?',

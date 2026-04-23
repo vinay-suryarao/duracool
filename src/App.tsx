@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
+import OpeningSplash from './components/OpeningSplash'
 import AboutPage from './pages/AboutPage'
 import AwardsPage from './pages/AwardsPage'
 import BookingPage from './pages/BookingPage'
@@ -8,20 +10,38 @@ import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
 
 function App() {
+  const [isSplashVisible, setIsSplashVisible] = useState(true)
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsSplashVisible(false)
+    }, 3500)
+
+    return () => {
+      window.clearTimeout(timer)
+    }
+  }, [])
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="awards" element={<AwardsPage />} />
-          <Route path="products" element={<ProductsPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="booking" element={<BookingPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <OpeningSplash isVisible={isSplashVisible} />
+
+      <div className={`app-shell ${isSplashVisible ? 'is-hidden' : 'is-ready'}`}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="awards" element={<AwardsPage />} />
+              <Route path="products" element={<ProductsPage />} />
+              <Route path="contact" element={<ContactPage />} />
+              <Route path="booking" element={<BookingPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   )
 }
 

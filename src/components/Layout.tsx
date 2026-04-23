@@ -50,7 +50,13 @@ function Layout() {
                   key={item.to}
                   to={item.to}
                   end={item.end}
-                  className={({ isActive }) => (isActive ? 'active' : undefined)}
+                  className={({ isActive }) => {
+                    const classes = [isActive ? 'active' : '', item.to === '/booking' ? 'nav-booking' : '']
+                      .filter(Boolean)
+                      .join(' ')
+
+                    return classes || undefined
+                  }}
                 >
                   {item.label}
                 </NavLink>
@@ -107,16 +113,14 @@ function Layout() {
                 </svg>
               </a>
               <a
-                href={siteConfig.facebookUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                title="Facebook"
+                href={`mailto:${siteConfig.contactEmail}`}
+                aria-label="Email"
+                title="Email"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fill="currentColor"
-                    d="M13.5 9H16V6h-2.5A4.5 4.5 0 0 0 9 10.5V13H6v3h3v6h3v-6h3l1-3h-4v-2.5A1.5 1.5 0 0 1 13.5 9"
+                    d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2-.38a.5.5 0 0 0-.2.4v.27l8 5.72 8-5.72v-.27a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.3.1Zm15.8 3.1-7.42 5.3a1 1 0 0 1-1.16 0L4 9.22v8.28c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V9.22Z"
                   />
                 </svg>
               </a>
@@ -141,9 +145,39 @@ function Layout() {
 
           <section className="footer-col contact-col">
             <h3>Contact Us</h3>
-            <p>{siteConfig.contactEmail}</p>
-            <p>{siteConfig.contactPhone}</p>
-            <p>Thane, Maharashtra, India</p>
+            <div className="footer-contact-line">
+              <span className="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2-.38a.5.5 0 0 0-.2.4v.27l8 5.72 8-5.72v-.27a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.3.1Zm15.8 3.1-7.42 5.3a1 1 0 0 1-1.16 0L4 9.22v8.28c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V9.22Z"
+                  />
+                </svg>
+              </span>
+              <p>{siteConfig.contactEmail}</p>
+            </div>
+            <div className="footer-contact-line">
+              <span className="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M6.62 10.8a15.98 15.98 0 0 0 6.58 6.58l2.2-2.2c.27-.27.67-.36 1.03-.24 1.12.37 2.32.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.12.36.03.76-.24 1.03l-2.2 2.2Z"
+                  />
+                </svg>
+              </span>
+              <p>{siteConfig.contactPhone}</p>
+            </div>
+            <div className="footer-contact-line">
+              <span className="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 2a7 7 0 0 0-7 7c0 5.13 7 13 7 13s7-7.87 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+                  />
+                </svg>
+              </span>
+              <p>K 218 ansha industries sakhivihar road sakhinaka, Near Shivsagar hotel</p>
+            </div>
           </section>
         </div>
 
