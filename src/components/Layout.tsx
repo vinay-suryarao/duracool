@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
 
@@ -13,12 +13,15 @@ const navItems = [
 
 function Layout() {
   const location = useLocation()
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    setIsMobileNavOpen(false)
   }, [location.pathname])
 
   const handleNavClick = () => {
+    setIsMobileNavOpen(false)
     window.requestAnimationFrame(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
     })
@@ -63,7 +66,24 @@ function Layout() {
               </div>
             </NavLink>
 
-            <nav className="site-nav" aria-label="Primary">
+            <button
+              type="button"
+              className={`mobile-menu-btn ${isMobileNavOpen ? 'is-open' : ''}`}
+              aria-label="Toggle navigation menu"
+              aria-controls="primary-navigation"
+              aria-expanded={isMobileNavOpen}
+              onClick={() => setIsMobileNavOpen((prev) => !prev)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+
+            <nav
+              id="primary-navigation"
+              className={`site-nav ${isMobileNavOpen ? 'is-open' : ''}`}
+              aria-label="Primary"
+            >
               {navItems.map((item) => (
                 <NavLink
                   key={item.to}
