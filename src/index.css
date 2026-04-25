@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -594,6 +599,276 @@ p {
   gap: 8px;
 }
 
+.about-page {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: clamp(8px, 1.8vw, 16px) clamp(14px, 3vw, 36px) clamp(34px, 5vw, 72px);
+  background:
+    radial-gradient(circle at 88% 14%, rgba(240, 100, 33, 0.2), transparent 33%),
+    radial-gradient(circle at 12% 86%, rgba(255, 255, 255, 0.08), transparent 28%),
+    linear-gradient(165deg, rgba(13, 13, 13, 0.98), rgba(7, 7, 7, 0.99));
+}
+
+.about-head {
+  max-width: 980px;
+  margin-bottom: 18px;
+}
+
+.about-head p {
+  color: #dfdfdf;
+  max-width: 760px;
+}
+
+.about-vision-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.about-focus-card {
+  position: relative;
+  overflow: hidden;
+  border-left: 3px solid rgba(255, 138, 86, 0.85);
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+  padding: 20px 18px 18px 20px;
+  min-height: clamp(220px, 23vw, 252px);
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: aboutRevealCard 0.8s ease forwards;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.about-focus-card::after {
+  content: '';
+  position: absolute;
+  inset: -40% auto -40% -30%;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255, 179, 140, 0.24), transparent);
+  transform: translateX(-170%) rotate(12deg);
+  pointer-events: none;
+  transition: transform 0.8s ease;
+}
+
+.about-focus-card h3 {
+  margin: 0;
+  transition: color 0.28s ease;
+}
+
+.about-focus-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.about-focus-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 198, 172, 0.56);
+  background: linear-gradient(150deg, rgba(240, 100, 33, 0.9), rgba(191, 73, 21, 0.92));
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-focus-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-focus-card p {
+  color: #e7e7e7;
+  line-height: 1.56;
+}
+
+.about-focus-card small {
+  margin-top: 8px;
+  color: #ffc6ac;
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+}
+
+.about-focus-card:hover,
+.about-focus-card:focus-within {
+  transform: translateY(-7px);
+  border-left-color: rgba(255, 181, 142, 0.95);
+  background: linear-gradient(102deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+}
+
+.about-focus-card:hover::after,
+.about-focus-card:focus-within::after {
+  transform: translateX(300%) rotate(12deg);
+}
+
+.about-focus-card:hover h3,
+.about-focus-card:focus-within h3 {
+  color: #ffd2bd;
+}
+
+.about-vision-card {
+  animation-delay: 0.06s;
+}
+
+.about-mission-card {
+  animation-delay: 0.2s;
+}
+
+.about-why-section {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 34px;
+  overflow: hidden;
+}
+
+.about-why-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.about-why-copy h3 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+}
+
+.about-why-copy p {
+  color: #d7d7d7;
+  max-width: 560px;
+}
+
+.about-why-list {
+  display: grid;
+  gap: 12px;
+}
+
+.about-why-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0 0 12px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 12px;
+  opacity: 0;
+  transform: translateX(-16px);
+  animation: aboutSlideIn 0.7s ease forwards;
+}
+
+.about-why-item:nth-child(1) {
+  animation-delay: 0.24s;
+}
+
+.about-why-item:nth-child(2) {
+  animation-delay: 0.38s;
+}
+
+.about-why-item:nth-child(3) {
+  animation-delay: 0.52s;
+}
+
+.about-why-item h4 {
+  margin: 0 0 4px;
+  font-size: 1.04rem;
+}
+
+.about-why-item p {
+  color: #d2d2d2;
+  line-height: 1.55;
+}
+
+.about-why-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 198, 172, 0.58);
+  background: linear-gradient(145deg, rgba(240, 100, 33, 0.88), rgba(190, 72, 20, 0.92));
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-why-visual {
+  position: relative;
+  min-height: clamp(390px, 34vw, 500px);
+  overflow: hidden;
+  animation: aboutFloatVisual 6s ease-in-out infinite;
+}
+
+.about-image-main,
+.about-image-small {
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.about-image-main {
+  position: absolute;
+  inset: 138px 0 0 54px;
+  width: calc(100% - 54px);
+  height: calc(100% - 138px);
+}
+
+.about-image-small {
+  position: absolute;
+  width: clamp(185px, 42%, 240px);
+  height: 116px;
+  left: 0;
+  border: 2px solid rgba(255, 148, 99, 0.85);
+}
+
+.about-image-top {
+  top: 18px;
+}
+
+.about-image-middle {
+  top: 158px;
+}
+
+@media (max-width: 1100px) {
+  .about-why-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-why-visual {
+    min-height: 420px;
+  }
+
+  .about-image-main {
+    inset: 130px 0 0 42px;
+    width: calc(100% - 42px);
+    height: calc(100% - 130px);
+  }
+
+  .about-image-top {
+    top: 14px;
+  }
+
+  .about-image-middle {
+    top: 144px;
+  }
+}
+
 .card-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1091,6 +1366,75 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
+  .top-strip {
+    height: 16px;
+  }
+
+  .ticker-track span {
+    font-size: 0.62rem;
+    line-height: 16px;
+  }
+
+  .header-inner {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+
+  .brand img {
+    height: 62px;
+    transform: scale(1.35);
+  }
+
+  .brand-copy {
+    margin-left: 18px;
+  }
+
+  .site-nav {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    gap: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .about-vision-mission-grid,
+  .about-why-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-why-visual {
+    min-height: 420px;
+  }
+
+  .about-focus-card {
+    min-height: 210px;
+  }
+
+  .about-image-main {
+    inset: 122px 0 0 34px;
+    width: calc(100% - 34px);
+    height: calc(100% - 122px);
+  }
+
+  .about-image-small {
+    width: min(230px, 62%);
+  }
+
+  .about-image-middle {
+    top: 138px;
+  }
+
   .home-info-grid,
   .home-highlight-grid {
     grid-template-columns: 1fr;
@@ -1141,6 +1485,25 @@ figcaption {
     align-items: flex-start;
   }
 
+  .brand img {
+    height: 52px;
+    transform: scale(1.18);
+  }
+
+  .brand-copy {
+    margin-left: 10px;
+  }
+
+  .site-nav a,
+  .footer-links a {
+    font-size: 0.82rem;
+    padding: 5px 9px;
+  }
+
+  .site-nav a.nav-booking {
+    padding: 7px 12px;
+  }
+
   .brand-copy small {
     font-size: 0.7rem;
   }
@@ -1177,6 +1540,41 @@ figcaption {
 
   .content-section {
     padding: 20px;
+  }
+
+  .about-page {
+    padding-top: 6px;
+  }
+
+  .about-focus-card,
+  .about-why-section {
+    padding: 14px 0;
+    border-radius: 0;
+  }
+
+  .about-focus-card {
+    min-height: auto;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .about-why-visual {
+    min-height: 340px;
+  }
+
+  .about-image-main {
+    inset: 102px 0 0 20px;
+    width: calc(100% - 20px);
+    height: calc(100% - 102px);
+  }
+
+  .about-image-small {
+    height: 95px;
+    width: min(200px, 65%);
+  }
+
+  .about-image-middle {
+    top: 122px;
   }
 
   .contact-map-card,
@@ -1255,6 +1653,38 @@ figcaption {
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@keyframes aboutRevealCard {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes aboutFloatVisual {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 

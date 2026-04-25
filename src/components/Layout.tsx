@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
 
 const navItems = [
@@ -11,6 +12,18 @@ const navItems = [
 ]
 
 function Layout() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname])
+
+  const handleNavClick = () => {
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    })
+  }
+
   return (
     <>
       <header className="site-header-wrap">
@@ -37,7 +50,13 @@ function Layout() {
           </div>
 
           <div className="header-inner">
-            <NavLink className="brand" to="/" aria-label="Go to home page" end>
+            <NavLink
+              className="brand"
+              to="/"
+              aria-label="Go to home page"
+              end
+              onClick={handleNavClick}
+            >
               <img src="/images/duracoollogo.png" alt={`${siteConfig.companyName} logo`} />
               <div className="brand-copy">
                 <small>Premium Suncontrol Film</small>
@@ -50,6 +69,7 @@ function Layout() {
                   key={item.to}
                   to={item.to}
                   end={item.end}
+                  onClick={handleNavClick}
                   className={({ isActive }) => {
                     const classes = [isActive ? 'active' : '', item.to === '/booking' ? 'nav-booking' : '']
                       .filter(Boolean)
@@ -135,6 +155,7 @@ function Layout() {
                   key={item.to}
                   to={item.to}
                   end={item.end}
+                  onClick={handleNavClick}
                   className={({ isActive }) => (isActive ? 'active' : undefined)}
                 >
                   {item.label}
