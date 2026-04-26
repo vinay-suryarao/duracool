@@ -57,6 +57,27 @@ export const siteConfig = {
   homeInfoIntro:
     env.VITE_HOME_INFO_INTRO ||
     'Suncontrol films are advanced layers applied on vehicle glass to reduce heat, UV exposure, and harsh glare while maintaining high visibility.',
+  homeRealBenefitsTitle:
+    env.VITE_HOME_REAL_BENEFITS_TITLE || 'Benefits of Sun Control Films',
+  homeRealBenefitsIntro:
+    env.VITE_HOME_REAL_BENEFITS_INTRO ||
+    'Built for Indian driving conditions, these films improve comfort, visibility, and safety every day without changing your glass clarity.',
+  homeRealBenefitHeadings: parseList(env.VITE_HOME_REAL_BENEFIT_HEADINGS, [
+    'Cabin Heat Control',
+    'UV Shield For Daily Drives',
+    'Lower AC Load',
+    'Safer Glass In Impact',
+    'Reduced Eye Fatigue',
+    'Cleaner Premium Finish',
+  ]),
+  homeRealBenefitDescriptions: parseList(env.VITE_HOME_REAL_BENEFIT_DESCRIPTIONS, [
+    'Heat-rejecting layers reduce direct solar load, so parked cars cool faster and long city traffic feels less exhausting.',
+    'High UV rejection helps protect skin exposure on long commutes while also slowing dashboard and seat fading over time.',
+    'With less heat entering the cabin, AC systems work more efficiently, especially during afternoon drives and stop-go traffic.',
+    'Safety film holds shattered glass fragments together on impact, reducing sharp scatter during accidents or break-in attempts.',
+    'Glare reduction improves road visibility in harsh sunlight and at reflective junctions, making daytime driving more relaxed.',
+    'Beyond performance, uniform tint and clean edges give the vehicle a refined look that stays consistent with proper installation.',
+  ]),
   homeEndTitle:
     env.VITE_HOME_END_TITLE || 'Driven By Detail. Built For Every Drive.',
   homeEndText:

@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import OpeningSplash from './components/OpeningSplash'
 import AboutPage from './pages/AboutPage'
-import AwardsPage from './pages/AwardsPage'
+import BeforeAfterPage from './pages/BeforeAfterPage.tsx'
 import BookingPage from './pages/BookingPage'
 import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
@@ -32,7 +32,8 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="about" element={<AboutPage />} />
-              <Route path="awards" element={<AwardsPage />} />
+              <Route path="before-after" element={<BeforeAfterPage />} />
+              <Route path="awards" element={<Navigate to="/before-after" replace />} />
               <Route path="products" element={<ProductsPage />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="booking" element={<BookingPage />} />
