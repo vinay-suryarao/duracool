@@ -1,38 +1,58 @@
-import { productShowcase, siteConfig } from '../config/siteConfig'
+import { Link } from 'react-router-dom'
+import productCeramic from '../assets/productceramic.jpg'
+import productEconomic from '../assets/producteconomic.jpg'
+import productPremium from '../assets/productpremium.jpg'
+
+type SeriesCard = {
+  id: 'economic' | 'ceramic' | 'premium'
+  title: string
+  image: string
+  to: string
+}
+
+const seriesCards: SeriesCard[] = [
+  {
+    id: 'economic',
+    title: 'Economic Series',
+    image: productEconomic,
+    to: '/products/economic',
+  },
+  {
+    id: 'ceramic',
+    title: 'Ceramic Series',
+    image: productCeramic,
+    to: '/products/ceramic',
+  },
+  {
+    id: 'premium',
+    title: 'Premium Series',
+    image: productPremium,
+    to: '/products/premium',
+  },
+]
 
 function ProductsPage() {
   return (
-    <section className="content-section">
+    <section className="content-section products-series-section">
       <div className="section-head">
         <p className="section-badge">Products</p>
-        <h2>Film options and before/after transformation</h2>
+        <h2>Choose Your Suncontrol Film Series</h2>
+        <p>
+          Select any series card below to open its dedicated products page.
+        </p>
       </div>
 
-      <div className="products-list">
-        {productShowcase.map((item) => (
-          <article key={item.name} className="product-card">
-            <div className="product-info">
-              <h3>{item.name}</h3>
-              <p>{item.summary}</p>
-            </div>
+      <div className="series-grid">
+        {seriesCards.map((series) => (
+          <article key={series.id} className="series-card">
+            <h3>{series.title}</h3>
 
-            <div className="before-after">
-              <figure>
-                <img src={item.beforeImage} alt={`${item.name} before application`} />
-                <figcaption>Before</figcaption>
-              </figure>
-              <figure>
-                <img src={item.afterImage} alt={`${item.name} after application`} />
-                <figcaption>After</figcaption>
-              </figure>
-            </div>
+            <img className="series-card-image" src={series.image} alt={`${series.title} film`} />
+
+            <Link to={series.to} className="series-card-button">
+              View Products
+            </Link>
           </article>
-        ))}
-      </div>
-
-      <div className="product-pills" aria-label="Product list">
-        {siteConfig.products.map((product) => (
-          <span key={product}>{product}</span>
         ))}
       </div>
     </section>

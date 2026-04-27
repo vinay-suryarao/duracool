@@ -1059,8 +1059,7 @@ p {
   gap: 14px;
 }
 
-.card img,
-.before-after img {
+.card img {
   width: 100%;
   border-radius: 12px;
   border: 1px solid var(--line);
@@ -1068,52 +1067,118 @@ p {
   min-height: 170px;
 }
 
-.products-list {
-  grid-template-columns: 1fr;
-}
-
-.product-card {
+.products-series-section {
   display: grid;
   gap: 16px;
 }
 
-.product-info {
+.series-grid {
   display: grid;
-  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.before-after {
+.series-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
+  align-content: start;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-figure {
-  margin: 0;
-  display: grid;
-  gap: 7px;
+.series-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 151, 99, 0.65);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
 }
 
-figcaption {
-  font-size: 0.86rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #fff;
+.series-card h3 {
+  font-size: 1.45rem;
 }
 
-.product-pills {
-  margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.series-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.product-pills span {
+.series-card-button {
+  border: 1px solid rgba(255, 166, 118, 0.74);
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 7px 12px;
-  font-size: 0.82rem;
+  background: linear-gradient(130deg, rgba(240, 100, 33, 0.88), rgba(201, 78, 23, 0.92));
   color: #fff;
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 9px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.series-card-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 206, 177, 0.92);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.28);
+}
+
+.series-card-button:focus-visible {
+  outline: 2px solid rgba(255, 214, 187, 0.95);
+  outline-offset: 2px;
+}
+
+.series-products-panel {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.series-products-empty {
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.series-detail-page {
+  display: grid;
+  gap: 14px;
+}
+
+.series-detail-head {
+  display: grid;
+  gap: 10px;
+}
+
+.series-detail-placeholder {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 14px;
+}
+
+.series-back-link {
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.series-back-link:hover {
+  border-color: var(--accent-soft);
+  background: rgba(240, 100, 33, 0.16);
 }
 
 .before-after-page {
@@ -1999,7 +2064,7 @@ figcaption {
     height: 24px;
   }
 
-  .before-after,
+  .series-grid,
   .booking-form {
     grid-template-columns: 1fr;
   }

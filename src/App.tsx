@@ -5,8 +5,11 @@ import OpeningSplash from './components/OpeningSplash'
 import AboutPage from './pages/AboutPage'
 import BeforeAfterPage from './pages/BeforeAfterPage.tsx'
 import BookingPage from './pages/BookingPage'
+import CeramicSeriesPage from './pages/CeramicSeriesPage.tsx'
 import ContactPage from './pages/ContactPage'
+import EconomicSeriesPage from './pages/EconomicSeriesPage.tsx'
 import HomePage from './pages/HomePage'
+import PremiumSeriesPage from './pages/PremiumSeriesPage.tsx'
 import ProductsPage from './pages/ProductsPage'
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
               <Route path="before-after" element={<BeforeAfterPage />} />
               <Route path="awards" element={<Navigate to="/before-after" replace />} />
               <Route path="products" element={<ProductsPage />} />
+              <Route path="products/economic" element={<EconomicSeriesPage />} />
+              <Route path="products/ceramic" element={<CeramicSeriesPage />} />
+              <Route path="products/premium" element={<PremiumSeriesPage />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="booking" element={<BookingPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
