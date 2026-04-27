@@ -2525,6 +2525,12 @@ p {
     min-height: var(--series-product-panel-height);
   }
 
+  .series-product-spec-card {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
   .ba-showcase-grid {
     grid-template-columns: 1fr;
   }
