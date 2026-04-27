@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import productCeramic from '../assets/productceramic.png'
 import productEconomic from '../assets/producteconomic.png'
-import productPremium from '../assets/productpremium.png  '
+import productPremium from '../assets/productpremium.png'
 
 type SeriesCard = {
   id: 'economic' | 'ceramic' | 'premium'
