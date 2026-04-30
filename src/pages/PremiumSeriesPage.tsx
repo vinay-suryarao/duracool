@@ -38,9 +38,9 @@ function PremiumSeriesPage() {
     <section className="content-section series-detail-page">
       <div className="series-detail-head">
         <p className="section-badge">Products</p>
-        <h2>Premium Series</h2>
+        <h2>Nanoshield Series</h2>
         <p>
-          Explore Premium Series product specifications.
+          Explore Nanoshield Series product specifications.
         </p>
       </div>
 

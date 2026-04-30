@@ -25,7 +25,7 @@ const seriesCards: SeriesCard[] = [
   },
   {
     id: 'premium',
-    title: 'Premium Series',
+    title: 'Nanoshield Series',
     image: productPremium,
     to: '/products/premium',
   },
