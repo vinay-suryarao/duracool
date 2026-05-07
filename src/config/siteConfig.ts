@@ -95,9 +95,18 @@ export const siteConfig = {
     'Trusted professional fitment and support for long-term performance',
   ]),
   products: parseList(env.VITE_PRODUCT_NAMES, [
-    'Nano Ceramic Film',
-    'Infrared Heat Shield Film',
-    'UV Block Safety Film',
+    'DC05',
+    'DC35',
+    'DC50',
+    'DC70',
+    'CH70',
+    'GN70',
+    'Classic 75',
+    'Classic 74',
+    'Classic 72',
+    'Classic 50',
+    'Nano shield 75',
+    'Nano shield 35',
   ]),
 }
 

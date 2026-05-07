@@ -5,8 +5,8 @@ import { siteConfig } from '../config/siteConfig'
 const navItems = [
   { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About Us' },
-  { to: '/before-after', label: 'Before / After' },
   { to: '/products', label: 'Products' },
+  { to: '/before-after', label: 'Before / After' },
   { to: '/contact', label: 'Contact Us' },
   { to: '/booking', label: 'Book Now' },
 ]
