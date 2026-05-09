@@ -1111,10 +1111,42 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.series-category-media {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.2));
+  display: grid;
+  place-items: center;
+}
+
+.series-category-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--category-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(32px) saturate(0.9);
+  transform: scale(1.2);
+  opacity: 0.3;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 .series-category-image {
-  background: #0b0b0b;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  padding: 10px;
+  object-position: center;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  display: block;
 }
 
 .series-card-button {
@@ -1541,100 +1573,33 @@ p {
 .economic-products-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .economic-product-card {
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background:
-    radial-gradient(circle at 92% 10%, rgba(240, 100, 33, 0.16), transparent 35%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  overflow: hidden;
   display: grid;
 }
 
-.economic-product-image-wrap {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-}
 
-.economic-product-image {
-  width: 100%;
+.economic-product-spec-card {
   height: 100%;
-  object-fit: cover;
+  min-height: 0;
 }
 
-.economic-product-body {
-  padding: 14px;
-  display: grid;
-  gap: 8px;
+.economic-product-spec-card .series-product-spec-head {
+  min-height: 150px;
 }
 
-.economic-product-code {
-  font-size: 1.7rem;
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: 0.03em;
+.economic-product-spec-card h3 {
+  font-size: clamp(1.6rem, 2.4vw, 2.05rem);
 }
 
-.economic-product-series {
-  color: #d9d9d9;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.economic-product-rule {
-  height: 2px;
-  background: linear-gradient(90deg, rgba(240, 100, 33, 0.95), rgba(240, 100, 33, 0.15));
-  margin-top: 4px;
-}
-
-.economic-product-spec-title {
-  color: #ff9465;
-  font-size: 1.08rem;
-  font-weight: 700;
-}
-
-.economic-product-spec-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.economic-product-spec-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.economic-product-spec-list li span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.economic-product-spec-list li span::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  border: 1px solid #ffb38e;
-  background: rgba(240, 100, 33, 0.24);
-}
-
-.economic-product-spec-list li strong {
-  color: #fff;
+.economic-product-spec-card .series-product-subtitle {
+  font-size: 1.35rem;
 }
 
 .economic-product-note {
-  color: #d7d7d7;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .before-after-page {

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import ceramicKitImage from '../assets/ceramickit.jpg'
-import ceramicRollImage from '../assets/ceramicroll.jpg'
+import ceramicKitImage from '../assets/ceramickit.png'
+import ceramicRollImage from '../assets/ceramicroll.png'
 
 type CeramicProduct = {
   code: string
@@ -41,14 +41,6 @@ const ceramicRollProducts: CeramicProduct[] = [
     totalSolarHeatRejection: '65%',
     color: 'ICE BLUE',
     colorClassName: 'series-color-ice-blue',
-  },
-  {
-    code: 'CLASSIC 74',
-    infraRedRejection: '96%',
-    ultravioletReflected: '99%',
-    totalSolarHeatRejection: '57%',
-    color: 'AQUA GREEN',
-    colorClassName: 'series-color-aqua-green',
   },
   {
     code: 'CLASSIC 72',
@@ -119,11 +111,16 @@ function CeramicSeriesPage() {
           {ceramicCategories.map((category) => (
             <article key={category.id} className="series-card">
               <h3>{category.title}</h3>
-              <img
-                className="series-card-image series-category-image"
-                src={category.image}
-                alt={`Ceramic ${category.title} option`}
-              />
+              <div
+                className="series-category-media"
+                style={{ ['--category-image' as string]: `url(${category.image})` } as CSSProperties}
+              >
+                <img
+                  className="series-card-image series-category-image"
+                  src={category.image}
+                  alt={`Ceramic ${category.title} option`}
+                />
+              </div>
               <button
                 type="button"
                 className="series-card-button"
